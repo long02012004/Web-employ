@@ -1,17 +1,35 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.scss";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const LogIn = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading] = useState(false);
-
+  const navigate = useNavigate();
+  const validatePhone = (phone) => {
+    return /^(0|\+84)[0-9]{9,10}$/.test(phone);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validatePhone(phone)) {
+      toast.error("Phone Number không hợp lệ");
+      return;
+    }
+    if (!password) {
+      toast.error("Mật khẩu không hợp lệ");
+      return;
+    }
+    toast.success("Đăng nhập thành công!");
+    navigate("/");
+  };
   return (
     <div className={styles["login-container"]}>
       <div className={styles["login-box"]}>
         <h2>Login</h2>
-        <form>
+        <form className={styles["login-form"]} onSubmit={handleSubmit}>
           <div className={styles["user-box"]}>
             <input
               id="phone"

@@ -7,10 +7,11 @@
   right: 0;
   height: 80px;
   background: rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: 50;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  overflow: hidden;
 
   &__login {
     display: flex;
@@ -233,20 +234,42 @@
   }
 }
 .nav__btn {
+  font-size: 16px;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 14px 22px;
   margin: 0 8px;
   background-color: #0d100e;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+}
+.nav__item {
+  &:nth-child(1) {
+    .nav__btn {
+      border: 2px solid #293ce3ff;
+      background-color: #f7f3f3ff;
+      color: #293ce3ff;
 
-  &:hover {
-    background-color: #0eaade;
-    color: #e4e9e9;
+      &:hover {
+        background-color: #b3defa; // Ví dụ
+        border: 2px solid #b3defa; // Ví dụ
+      }
+    }
+  }
+  &:nth-child(2) {
+    .nav__btn {
+      border: 2px solid #293ce3ff;
+      background: linear-gradient(270deg, #00379d 0, #2466c9 100%);
+      color: rgb(244, 245, 249);
+
+      &:hover {
+        background-color: #b3defa; // Ví dụ
+        border: 2px solid #b3defa; // Ví dụ
+      }
+    }
   }
 }

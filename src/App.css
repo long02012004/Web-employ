@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 1521px;
+  height: 100vh;
+}
+.header-container {
+  width: 100px;
+  overflow: hidden;
+  background-color: aqua;
+}
+.app-content {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.footer-container {
+  margin-top: 10px;
+}

@@ -39,7 +39,7 @@ const Header = () => {
             </li>
             <li className={styles.nav__item}>
               <NavLink className={styles.nav__link} to="/food">
-                Ẩm thực
+                Việc làm
               </NavLink>
             </li>
             <li className={styles.nav__item}>
@@ -84,7 +84,15 @@ const Header = () => {
         </nav>
         <div className={styles.header__actions}>
           <li className={styles.nav__item}>
-            <button className={styles.nav__btn} onClick={handleClickLogin}>
+            <button
+              className={styles.nav__btn}
+              onClick={handleClickLogin}
+              /*  style={{
+                border: "2px solid #293ce3ff",
+                backgroundColor: "#f7f3f3ff",
+                color: "#293ce3ff",
+              }} */
+            >
               Đăng nhập
             </button>
           </li>
