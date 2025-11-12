@@ -1,0 +1,139 @@
+/* Biến màu (giống trong ảnh) */
+$light-blue-bg: #b5dffa; // (Màu nền xanh nhạt)
+$dark-blue-btn: #1d4ed8; // (Màu nút "Tìm việc")
+$filter-blue-btn: #2563eb; // (Màu các nút filter)
+$text-color: #333;
+$placeholder-color: #9ca3af;
+$border-color: #d1d5db;
+
+.searchContainer {
+  background-color: $light-blue-bg;
+  padding: 24px;
+  border-radius: 20px; // Bo góc lớn
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 24px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.searchForm {
+  display: flex;
+  gap: 16px; // Khoảng cách giữa (hộp input) và (nút)
+  margin-bottom: 16px;
+}
+
+/* Hộp input màu trắng bên trái */
+.inputWrapper {
+  flex-grow: 1; // Chiếm hết không gian còn lại
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden; // Giúp bo góc hoạt động
+  border: 1px solid $border-color;
+}
+
+/* Từng ô input (Từ khóa, Địa điểm) */
+.inputField {
+  display: flex;
+  align-items: center; // Căn giữa theo chiều dọc
+  padding: 14px 16px;
+  flex-basis: 50%; // Chia đều 50% cho mỗi ô
+
+  strong {
+    font-size: 0.95rem;
+    color: $text-color;
+    margin-right: 8px;
+    white-space: nowrap; // Không xuống dòng
+  }
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+    color: $text-color;
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+}
+
+/* Đường kẻ dọc ngăn cách */
+.separator {
+  width: 1px;
+  background-color: $border-color;
+  margin: 10px 0; // Tạo khoảng hở trên dưới
+}
+
+/* Nút "TÌM VIỆC" */
+.searchButton {
+  background: linear-gradient(270deg, #00379d 0, #2466c9 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+
+  &:hover {
+    background: linear-gradient(270deg, #1f57a3 0, #002f80 100%);
+    color: aqua;
+  }
+}
+
+/* Hàng chứa các nút filter */
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap; // Cho phép xuống dòng nếu không đủ chỗ
+  gap: 12px;
+}
+
+/* Từng nút filter (Ngành nghề, Loại hình...) */
+.filterButton {
+  background-color: $filter-blue-btn;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  display: flex;
+  align-items: center;
+  gap: 8px; // Khoảng cách giữa (icon) và (chữ)
+
+  /* Tùy chỉnh icon */
+  svg {
+    font-size: 1.1em; // Kích thước icon to hơn chữ một chút
+  }
+
+  .dropdownIcon {
+    font-size: 0.9em;
+    margin-left: 4px; // Đẩy icon mũi tên ra xa
+  }
+
+  &:hover {
+    background-color: darken($filter-blue-btn, 5%);
+  }
+  &::after {
+    display: none;
+  }
+}
+.dropdownItem {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0c0b0b; // Màu chữ mặc định
+  padding: 8px 16px; // Tăng khoảng cách một chút
+
+  // Đây là hiệu ứng hover
+  &:hover,
+  &:focus {
+    background-color: #d7d7d79d; // Màu xanh giống nút filter
+  }
+}

@@ -1,0 +1,89 @@
+/* Biến màu */
+$text-primary: #374151;
+$text-secondary: #6b7280;
+$text-title: #1e40af; // Tiêu đề nhóm (A, B, C...)
+$border-blue: #93c5fd;
+$sidebar-bg: #e6e9ec; // Nền cột sidebar
+
+.pageContainer {
+  width: 100%;
+  max-width: 1300px;
+  margin: 24px auto;
+  font-family: Arial, sans-serif;
+  padding: 24px;
+}
+
+.mainTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.categoryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; // Khoảng cách giữa các nhóm
+}
+
+/* Style cho cột sidebar (Địa điểm phổ biến) */
+.sidebar {
+  background-color: $sidebar-bg;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content; // Chỉ cao vừa đủ nội dung
+}
+
+/* Style cho một nhóm */
+.categoryGroup {
+  /* Không cần style */
+}
+
+/* Tiêu đề nhóm mặc định (A, B, C...) */
+.groupTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0069db;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid $border-blue;
+  text-transform: uppercase;
+}
+
+/* Tiêu đề nhóm của sidebar (Địa điểm phổ biến) */
+.sidebarTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: $text-primary;
+  margin: 0 0 16px 0;
+  border-bottom: none;
+  text-transform: none;
+}
+
+/* Danh sách các mục con */
+.itemList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    font-size: 0.875rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $text-primary;
+
+    span {
+      color: $text-secondary;
+    }
+
+    &:hover {
+      color: $text-title;
+      text-decoration: underline;
+    }
+  }
+}

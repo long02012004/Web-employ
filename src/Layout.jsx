@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import App from "./App";
+import Job from "./Page/User/job/Job";
 
 const NotFound = () => {
   return (
@@ -23,10 +24,12 @@ const Layout = () => {
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
+          <Route path="job" element={<Job />} />
         </Route>
         <Route path="sign-up" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="forgot-password" element={<ForgotPassword />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer
         position="top-right"

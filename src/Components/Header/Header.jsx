@@ -33,7 +33,7 @@ const Header = () => {
         <nav className={styles.header__nav}>
           <ul className={styles.nav}>
             <li className={styles.nav__item}>
-              <NavLink className={styles.nav__link} to="/home">
+              <NavLink className={styles.nav__link} to="/job">
                 Việc làm
               </NavLink>
             </li>
