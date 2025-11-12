@@ -2,6 +2,7 @@ import Video from "../../../assets/Video/video.mp4";
 import styles from "./Home.module.scss";
 import HotJobs from "./HotJobs";
 import IndustryJobs from "./IndustryJobs";
+import TopHiring from "./TopHiring";
 import { Breadcrumb } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
@@ -27,6 +28,7 @@ const Home = () => {
             <Breadcrumb.Item active>Công ty đang tuyển dụng</Breadcrumb.Item>
           </Breadcrumb>
         </div>
+        <TopHiring />
         <HotJobs />
         <IndustryJobs />
       </div>

@@ -1,0 +1,16 @@
+export const categoriesData = [
+  { id: 1, title: "Tiêu Biểu", description: "540+ Doanh nghiệp" },
+  { id: 2, title: "Nổi Bật", description: "440+ Doanh nghiệp" },
+  { id: 3, title: "Ngân Hàng", description: "100+ Doanh nghiệp" },
+  { id: 4, title: "Bảo Hiểm", description: "35+ Doanh nghiệp" },
+  { id: 5, title: "Công Nghệ", description: "315+ Doanh nghiệp" },
+  { id: 6, title: "Xây Dựng", description: "200+ Doanh nghiệp" },
+  { id: 7, title: "Sản Xuất", description: "150+ Doanh nghiệp" },
+  { id: 8, title: "Bán Lẻ", description: "300+ Doanh nghiệp" },
+  { id: 3, title: "Ngân Hàng", description: "100+ Doanh nghiệp" },
+  { id: 4, title: "Bảo Hiểm", description: "35+ Doanh nghiệp" },
+  { id: 5, title: "Công Nghệ", description: "315+ Doanh nghiệp" },
+  { id: 6, title: "Xây Dựng", description: "200+ Doanh nghiệp" },
+  { id: 7, title: "Sản Xuất", description: "150+ Doanh nghiệp" },
+  { id: 8, title: "Bán Lẻ", description: "300+ Doanh nghiệp" },
+];

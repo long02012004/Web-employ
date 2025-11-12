@@ -11,7 +11,6 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  overflow: hidden;
 
   &__login {
     display: flex;
@@ -234,9 +233,9 @@
   }
 }
 .nav__btn {
-  font-size: 16px;
+  font-size: 14px;
   display: inline-block;
-  padding: 14px 22px;
+  padding: 14px 16px;
   margin: 0 8px;
   background-color: #0d100e;
   color: #fff;
@@ -269,6 +268,15 @@
       &:hover {
         background-color: #b3defa; // Ví dụ
         border: 2px solid #b3defa; // Ví dụ
+      }
+    }
+  }
+  &:nth-child(3) {
+    .nav__btn {
+      &:hover {
+        background-color: #b3defa; // Ví dụ
+        border: 2px solid #b3defa; // Ví dụ
+        color: #293ce3ff;
       }
     }
   }

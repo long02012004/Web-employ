@@ -34,32 +34,27 @@ const Header = () => {
           <ul className={styles.nav}>
             <li className={styles.nav__item}>
               <NavLink className={styles.nav__link} to="/home">
-                Trang chủ
-              </NavLink>
-            </li>
-            <li className={styles.nav__item}>
-              <NavLink className={styles.nav__link} to="/food">
                 Việc làm
               </NavLink>
             </li>
             <li className={styles.nav__item}>
+              <NavLink className={styles.nav__link} to="/food">
+                Công ty
+              </NavLink>
+            </li>
+            <li className={styles.nav__item}>
               <NavLink className={styles.nav__link} to="/blog">
-                Blog
+                CV/Hồ Sơ
               </NavLink>
             </li>
             <li className={styles.nav__item}>
               <NavLink className={styles.nav__link} to="/offers">
-                Ưu Đãi
+                Công cụ
               </NavLink>
             </li>
             <li className={styles.nav__item}>
               <NavLink className={styles.nav__link} to="/viewroom">
-                Tìm Phòng
-              </NavLink>
-            </li>
-            <li className={styles.nav__item}>
-              <NavLink className={styles.nav__link} to="/contact">
-                Liên Hệ
+                Cẩm nang
               </NavLink>
             </li>
 
@@ -99,6 +94,11 @@ const Header = () => {
           <li className={styles.nav__item}>
             <button className={styles.nav__btn} onClick={handleClickSignUp}>
               Đăng ký
+            </button>
+          </li>
+          <li className={styles.nav__item}>
+            <button className={styles.nav__btn} >
+              Nhà tuyển dụng
             </button>
           </li>
         </div>
