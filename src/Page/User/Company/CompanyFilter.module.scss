@@ -1,0 +1,23 @@
+.sidebar {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  height: fit-content; // Chỉ cao vừa đủ
+}
+
+/* Các style của .filterGroup, .title, .filterList đã được chuyển đi */
+
+.allLink {
+  display: block;
+  font-size: 0.9rem;
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: none;
+  // Kéo lên gần nhóm "Nơi làm việc" và tạo khoảng cách với nhóm "Quy mô"
+  margin-top: -8px; 
+  margin-bottom: 20px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

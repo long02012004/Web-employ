@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import App from "./App";
 import Job from "./Page/User/job/Job";
+import CompaniesPage from "./Page/User/Company/CompaniesPage";
 
 const NotFound = () => {
   return (
@@ -25,6 +26,7 @@ const Layout = () => {
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
           <Route path="job" element={<Job />} />
+          <Route path="company" element={<CompaniesPage />} />
         </Route>
         <Route path="sign-up" element={<SignUp />} />
         <Route path="login" element={<Login />} />
