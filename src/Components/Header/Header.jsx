@@ -43,17 +43,12 @@ const Header = () => {
               </NavLink>
             </li>
             <li className={styles.nav__item}>
-              <NavLink className={styles.nav__link} to="/blog">
+              <NavLink className={styles.nav__link} to="/curriculum">
                 CV/Hồ Sơ
               </NavLink>
             </li>
             <li className={styles.nav__item}>
-              <NavLink className={styles.nav__link} to="/offers">
-                Công cụ
-              </NavLink>
-            </li>
-            <li className={styles.nav__item}>
-              <NavLink className={styles.nav__link} to="/viewroom">
+              <NavLink className={styles.nav__link} to="/handbook">
                 Cẩm nang
               </NavLink>
             </li>
@@ -97,9 +92,7 @@ const Header = () => {
             </button>
           </li>
           <li className={styles.nav__item}>
-            <button className={styles.nav__btn} >
-              Nhà tuyển dụng
-            </button>
+            <button className={styles.nav__btn}>Nhà tuyển dụng</button>
           </li>
         </div>
       </header>

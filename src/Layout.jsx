@@ -11,6 +11,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import Job from "./Page/User/job/Job";
 import CompaniesPage from "./Page/User/Company/CompaniesPage";
+import Handbook from "./Page/User/Handbook/Handbook";
+import CurriculumVitae from "./Page/User/CurriculumVitae/CurriculumVitae";
 
 const NotFound = () => {
   return (
@@ -27,6 +29,8 @@ const Layout = () => {
           <Route index element={<HomePage />} />
           <Route path="job" element={<Job />} />
           <Route path="company" element={<CompaniesPage />} />
+          <Route path="curriculum" element={<CurriculumVitae />} />
+          <Route path="handbook" element={<Handbook />} />
         </Route>
         <Route path="sign-up" element={<SignUp />} />
         <Route path="login" element={<Login />} />
