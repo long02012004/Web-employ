@@ -1,0 +1,86 @@
+/* File: /components/ArticleSection/ArticleCard.module.scss */
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.imageLink {
+  display: block;
+  overflow: hidden; // Giúp giữ bo góc khi ảnh zoom
+}
+
+.image {
+  width: 100%;
+  height: 180px; // Chiều cao cố định cho ảnh
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  .imageLink:hover & {
+    transform: scale(1.05); // Hiệu ứng zoom khi hover
+  }
+}
+
+.content {
+  padding: 16px;
+  flex: 1; // Giúp content chiếm hết phần còn lại
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  
+  /* Giới hạn 2 dòng */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  a {
+    color: #222;
+    text-decoration: none;
+    
+    &:hover {
+      color: #007bff; // Đổi màu khi hover
+    }
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1; // Đẩy meta và title lên trên
+  
+  /* Giới hạn 3 dòng */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

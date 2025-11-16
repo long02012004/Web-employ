@@ -1,0 +1,95 @@
+/* Biến màu */
+$primary-blue: #0a65e5; // Màu xanh đậm
+$border-color: #e0e0e0;
+$text-primary: #333;
+$text-secondary: #555;
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto; // Tạo khoảng cách trên dưới
+  padding: 24px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.title {
+  font-size: 1.75rem; // 28px
+  font-weight: bold;
+  color: $primary-blue;
+  margin: 0 0 16px 0; // Khoảng cách tới gạch chân
+  position: relative;
+  display: inline-block; // Chỉ rộng bằng nội dung text
+
+  // Gạch chân màu xanh
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px; // Cách text 8px
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $primary-blue;
+    border-radius: 2px;
+  }
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Tạo layout 3 cột
+  gap: 32px; // Khoảng cách giữa các thẻ
+  margin-top: 48px; // Khoảng cách từ tiêu đề xuống
+
+  // Responsive cho mobile (nếu cần)
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Chuyển thành 1 cột
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 250px; // Giới hạn độ rộng của khung icon
+  height: 250px; // Đặt chiều cao cố định
+
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px; // Khoảng cách tới text
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Style cho ảnh bên trong
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  // Giả lập cho [Image placeholder]
+  :global([data-test-id="image-placeholder"]) {
+    width: 150px;
+    height: 150px;
+    background: #f0f0f0;
+  }
+}
+
+.cardDescription {
+  font-size: 1rem; // 16px
+  color: $text-secondary;
+  line-height: 1.6;
+  margin: 0;
+
+  // Rất quan trọng:
+  // Giúp các dấu \n (xuống dòng) trong data
+  // được hiển thị đúng
+  white-space: pre-line;
+}

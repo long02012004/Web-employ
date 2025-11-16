@@ -1,0 +1,41 @@
+/* CtaBanners.module.scss */
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* 1. Layout lưới 2 cột */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // 2 cột bằng nhau
+  gap: 20px; // Khoảng cách giữa 2 banner
+}
+
+.bannerLink {
+  display: block;
+  border-radius: 16px; // Bo góc
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); // Hiệu ứng nhấc lên khi hover
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto; // Tự động điều chỉnh chiều cao
+  display: block; // Xóa khoảng trắng thừa bên dưới ảnh
+}
+
+/* --- Responsive --- */
+/* Khi màn hình nhỏ (ví dụ: mobile), xếp chồng 2 banner */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

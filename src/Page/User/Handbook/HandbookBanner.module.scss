@@ -1,0 +1,87 @@
+/* HandbookBanner.module.scss */
+
+.bannerContainer {
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa của toàn bộ banner */
+  margin: 20px auto; /* Căn giữa trên trang */
+  border-radius: 24px; /* Bo góc */
+  overflow: hidden; /* Đảm bảo mọi thứ bên trong đều bị cắt theo bo góc */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Thêm đổ bóng nhẹ */
+}
+
+.bannerBackground {
+  position: relative; /* Quan trọng: để định vị robot bên trong nó */
+  display: flex; /* Sử dụng flexbox để căn chỉnh nội dung */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding: 40px 60px; /* Đệm bên trong cho cả văn bản và robot */
+  min-height: 250px; /* Chiều cao tối thiểu của banner */
+
+  /* Sử dụng hình nền bạn đã tách */
+  background-size: cover; /* Đảm bảo ảnh nền che phủ toàn bộ */
+  background-position: center; /* Căn giữa ảnh nền */
+}
+
+.content {
+  flex: 1; /* Chiếm phần không gian còn lại bên trái */
+  max-width: 600px; /* Giới hạn chiều rộng của văn bản */
+  z-index: 1; /* Đảm bảo văn bản nằm trên hình nền và robot nếu cần */
+
+  /* Đảm bảo văn bản có thể đọc được */
+  color: #002a4d; /* Một màu xanh đậm, bạn có thể điều chỉnh */
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  color: #1e50b0;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  width: 90%;
+}
+
+.robotImage {
+  position: absolute; /* Định vị tuyệt đối */
+  right: 60px; /* Cách lề phải 60px (điều chỉnh nếu cần) */
+  bottom: 0; /* Căn dưới cùng của banner */
+  height: 100%; /* Chiều cao 100% của container cha để fill chiều cao */
+  max-width: 50%; /* Giới hạn chiều rộng tối đa (để không đè lên văn bản) */
+  object-fit: contain; /* Đảm bảo hình ảnh không bị méo */
+  pointer-events: none; /* Ngăn không cho robot chặn sự kiện click vào văn bản */
+  z-index: 0; /* Đảm bảo robot nằm dưới văn bản (nếu văn bản tràn) */
+}
+
+/* Responsive (Tùy chọn) */
+@media (max-width: 768px) {
+  .bannerBackground {
+    flex-direction: column; /* Xếp chồng nội dung và robot khi màn hình nhỏ */
+    padding: 30px;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .content {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .robotImage {
+    position: static; /* Trở lại vị trí bình thường trong luồng */
+    height: auto;
+    max-width: 60%;
+    margin-top: 20px;
+    align-self: center; /* Căn giữa robot */
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}

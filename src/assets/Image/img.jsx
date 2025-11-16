@@ -32,7 +32,60 @@ import logo23 from "./logo23.png";
 import logo24 from "./logo24.png";
 import logo25 from "./logo25.png";
 import logo26 from "./logo26.png";
+import cv from "./CV.png";
+import cv1 from "./cv1.png";
+import cv2 from "./cv2.png";
+import cv3 from "./cv3.png";
+import cv4 from "./cv4.png";
+import cv5 from "./cv5.png";
+import cv6 from "./cv6.png";
+import robot from "./robot.png";
+import robot1 from "./robot1.png";
+import bannerRobot from "./bannerRobot.png";
+import handbook1 from "./handbook1.png";
+import handbook2 from "./handbook2.png";
+import handbook3 from "./handbook3.png";
+import handbook4 from "./handbook4.png";
+import handbook5 from "./handbook5.png";
+import articleSection from "./ArticleSection.png";
+import articleSection1 from "./ArticleSection1.png";
+import articleSection2 from "./ArticleSection2.png";
+import articleSection3 from "./ArticleSection3.png";
+import articleSection4 from "./ArticleSection4.png";
+import articleSection5 from "./ArticleSection5.png";
+import articleSection6 from "./ArticleSection6.png";
+import articleSection7 from "./ArticleSection7.png";
+import articleSection8 from "./ArticleSection8.png";
+import cvAuto from "./cvAuto.png";
+import cvAi from "./cvAi.png";
 export {
+  cvAuto,
+  cvAi,
+  backgroundSignUp,
+  articleSection8,
+  articleSection7,
+  articleSection6,
+  articleSection5,
+  articleSection4,
+  articleSection3,
+  articleSection2,
+  articleSection1,
+  articleSection,
+  handbook5,
+  handbook4,
+  handbook3,
+  handbook2,
+  handbook1,
+  bannerRobot,
+  robot1,
+  robot,
+  cv,
+  cv1,
+  cv2,
+  cv3,
+  cv4,
+  cv5,
+  cv6,
   logo26,
   logo25,
   logo24,
@@ -61,7 +114,6 @@ export {
   logo,
   avatar,
   logo1,
-  backgroundSignUp,
   flag,
   rocket,
   googlePlay,

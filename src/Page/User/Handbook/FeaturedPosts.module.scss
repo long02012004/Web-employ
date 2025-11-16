@@ -1,0 +1,206 @@
+/* FeaturedPosts.module.scss */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.mainTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #222;
+}
+
+/* 1. Layout Grid chính */
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 3fr; /* Cột trái gấp đôi cột phải */
+  gap: 30px;
+  max-height: 560px;
+}
+
+/* 2. Styling cho Card lớn (bên trái) */
+.largeCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 75%; // Giúp card lớn giữ đúng chiều cao
+  color: #fff;
+  display: flex; /* Dùng flex để content đẩy xuống dưới */
+  flex-direction: column;
+  justify-content: flex-end; /* Đẩy content xuống dưới */
+}
+
+.largeCardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.largeCardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient đen mờ từ dưới lên */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, transparent);
+  z-index: 2;
+}
+
+.largeCardContent {
+  position: relative; /* Nằm trên overlay */
+  z-index: 3;
+  padding: 24px;
+}
+
+.largeCardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.meta {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #f1f1f1;
+  margin-bottom: 12px;
+  align-items: center;
+
+  svg {
+    margin-right: 5px;
+  }
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #eee;
+}
+
+.readMore {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* 3. Styling cho danh sách Card nhỏ (bên phải) */
+.smallCardList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.smallCard {
+  display: flex;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  
+  /* Layout: nội dung bên cạnh ảnh (giữ lại từ code của bạn) */
+  flex-direction: row;
+
+  /* 1. THÊM THUỘC TÍNH NÀY ĐỂ MỌI HIỆU ỨNG MƯỢT MÀ */
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    /* Hiệu ứng 1: Đổi bóng (đã có) */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px 0px;
+    
+    /* 2. THÊM HIỆU ỨNG NHẤC THẺ LÊN */
+    transform: translateY(-5px);
+  }
+
+  & .description {
+    /* Hiển thị mô tả (giữ lại từ code của bạn) */
+    display: block; 
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.smallCardImage {
+  flex-shrink: 0;
+  width: 160px; // Chiều rộng của ảnh thumbnail
+  height: 180px; // Chiều cao
+
+  img {
+    width: 100%;
+    border-radius: 18px 0 0 18px;
+
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+  }
+}
+
+.smallCardContent {
+  padding: 15px;
+  flex: 1; // Giúp nội dung chiếm hết phần còn lại
+
+  & .meta {
+    color: #777; // Màu meta của card nhỏ
+    margin-bottom: 0;
+  }
+}
+
+.smallCardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+
+  a {
+    color: #222;
+    text-decoration: none;
+    &:hover {
+      color: #007bff; // Màu link khi hover
+    }
+  }
+}
+
+/* 4. Responsive cho thiết bị di động */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr; /* Xếp chồng 2 cột */
+  }
+
+  .largeCard {
+    min-height: 400px; /* Đảm bảo có chiều cao tối thiểu */
+  }
+}
+
+@media (max-width: 576px) {
+  .smallCard {
+    /* Đảm bảo ảnh và nội dung không quá chật */
+    flex-direction: column;
+
+    & .smallCardImage {
+      width: 100%;
+      height: 180px; // Ảnh rộng ra khi xếp dọc
+    }
+  }
+}

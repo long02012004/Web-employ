@@ -1,0 +1,58 @@
+/* File: /components/ArticleSection/ArticleSection.module.scss */
+
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+}
+
+.seeMore {
+  font-size: 16px;
+  font-weight: 600;
+  color: #007bff; // Màu xanh dương (có thể đổi)
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 cột bằng nhau
+  gap: 20px;
+}
+
+/* --- Responsive --- */
+
+/* Cho Tablet (2 cột) */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Cho Mobile (1 cột) */
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+}

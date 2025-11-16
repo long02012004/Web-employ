@@ -1,0 +1,219 @@
+/* Biến màu */
+$primary-blue: #0a65e5; // Màu xanh nút và subtitle
+$text-dark: #333;
+$text-secondary: #555;
+$note-bg: #fffbe6; // Màu vàng nhạt
+$note-border: #ffe58f;
+
+.pageWrapper {
+  min-height: 100vh;
+  width: 100%;
+
+  // --- Nền trang ---
+  // Tạm thời dùng màu xanh
+  background-color: #007bff;
+  // (Bạn hãy thay bằng background-image thật của bạn)
+  background-image: url("https://user-images.githubusercontent.com/1528225/286202450-43209b11-75e8-4223-96e0-e110b6d3b4e8.png"); // Placeholder
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  padding-top: 100px;
+  font-family: Arial, sans-serif;
+  position: relative; // Cần để định vị con mascot
+  overflow: hidden; // Ngăn mascot tràn ra
+}
+
+.contentCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 32px 40px;
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+  z-index: 10; // Nổi lên trên mascot
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: $text-dark;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: $primary-blue;
+  font-weight: 600;
+  margin: 8px 0 24px 0;
+  text-transform: uppercase;
+}
+
+.iconContainer {
+  margin-bottom: 24px;
+  // Giả lập cho [Image] tag
+  :global([data-test-id="image-placeholder"]) {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background: #f0f0f0;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-dark;
+    margin: 8px 0 4px 0;
+  }
+  p {
+    font-size: 0.9rem;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.uploadForm {
+  text-align: left; // Căn lề trái cho form
+}
+
+.formGroup {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-dark;
+    margin-bottom: 8px;
+  }
+
+  .required {
+    color: red;
+    margin-left: 4px;
+  }
+}
+
+/* Đây là input file mặc định của trình duyệt */
+.fileInput {
+  width: 100%;
+  font-size: 0.9rem;
+  color: #333;
+
+  // Style nút "Chọn tệp"
+  &::file-selector-button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+}
+
+.noteBox {
+  background-color: $note-bg;
+  border: 1px solid $note-border;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+    strong {
+      color: #333;
+    }
+  }
+}
+
+.noteIcon {
+  color: #fadb14; // Màu vàng
+  font-size: 1.2rem;
+  flex-shrink: 0; // Ngăn icon bị co
+  margin-top: 2px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: $primary-blue;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: darken($primary-blue, 10%);
+  }
+}
+
+/* Mascot ở góc */
+.mascot {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  z-index: 5;
+  text-align: center;
+
+  // Giả lập cho [Image] tag
+  :global([data-test-id="image-placeholder"]) {
+    width: 100px;
+    background: #f0f0f0;
+  }
+}
+
+.speechBubble {
+  position: absolute;
+  bottom: 110px; // Ngay trên đầu con robot (giả sử robot 100px)
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.85rem;
+  color: #333;
+  width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  // Mũi tên tam giác (::after)
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; // Nối vào
+    right: 30px;
+    border-width: 10px 10px 0 10px; // Tam giác chỉ lên (màu trắng)
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+  }
+
+  // Border cho mũi tên (::before)
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -11px; // Nằm dưới 1px
+    right: 30px;
+    border-width: 11px 11px 0 11px; // Tam giác to hơn 1px (màu border)
+    border-style: solid;
+    border-color: #ccc transparent transparent transparent;
+    z-index: -1; // Nằm dưới
+  }
+}

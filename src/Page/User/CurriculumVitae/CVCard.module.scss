@@ -1,0 +1,44 @@
+.card {
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.imageContainer {
+  border: 1px solid #e0e0e0;
+  // Đường viền màu ở trên
+  border-top-width: 6px; 
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+
+  // Giả lập cho [Image]
+  :global([data-test-id="image-placeholder"]) {
+    width: 100%;
+    height: 350px; // Đặt chiều cao tương đối
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.caption {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
